@@ -51,7 +51,9 @@ function App() {
 
   const onNext = () => {
     setIsRunning(false);
-    setCells(getNextGen(memory.current[memory.current.length - 1]));
+    const nextCell = getNextGen(memory.current[memory.current.length - 1]);
+    setCells(nextCell);
+    memory.current.push(nextCell);
   };
 
   const onFebore = () => {
